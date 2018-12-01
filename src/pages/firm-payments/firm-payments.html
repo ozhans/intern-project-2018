@@ -1,0 +1,65 @@
+<!--
+  Generated template for the FirmPaymentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh..."
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let payment of this.firm_payments">
+      <ion-item-options>
+        <button ion-button color="default" (click)="editFirmPayment(payment._id)" small>
+          <ion-icon name="settings" ></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteFirmPayment(payment)" small>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item  class="item no-padding" >
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <font color="dodgerblue">Tutar</font>
+            </ion-col>
+            <ion-col>
+              {{payment.amount}} {{payment.currency}}
+            </ion-col>
+            <ion-col>
+              <font color="dodgerblue">Taksit</font>
+            </ion-col>
+            <ion-col>
+              {{payment.instalment}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <font color="dodgerblue">Son Ödeme Tarihi</font>
+            </ion-col>
+            <ion-col>
+              {{payment.deadline | date:"dd/MM/yyyy"}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <font color="dodgerblue">Açıklama</font> {{payment.comment}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="addFirmPayment()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

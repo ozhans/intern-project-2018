@@ -1,0 +1,46 @@
+<!--
+  Generated template for the AddFirmPaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ödeme Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click) = "close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" >Tarih</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="payment.deadline"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Tutar</ion-label>
+    <ion-input type="number" [(ngModel)]="payment.amount" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Para Birimi</ion-label>
+    <ion-select [(ngModel)]="payment.currency">
+      <ion-option value="TL">TL</ion-option>
+      <ion-option value="Dolar">Dolar</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Taksit</ion-label>
+    <ion-input type="number" [(ngModel)]="payment.instalment" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Açıklama</ion-label>
+    <ion-input type="text" [(ngModel)]="payment.comment" ></ion-input>
+  </ion-item>
+  <button ion-button (click)="save()">Kaydet</button>
+</ion-content>

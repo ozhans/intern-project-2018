@@ -1,0 +1,32 @@
+<ion-menu [content]="content" id = "menu1">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>Modüller</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+        <ion-list>
+            <button ion-item id="patient" block (click)="push1()" menuClose="menu1">
+                Hasta
+            </button>
+            <button ion-item id="doctor" block (click)="push3()" menuClose="menu1">
+                Doktor
+            </button>
+            <button ion-item id="appointment" block (click)="push2()" menuClose="menu1">
+                Randevu
+            </button>
+            <button ion-item id="product" block (click)="push4()" menuClose="menu1">
+                Ürün
+            </button>
+            <button ion-item id="firm" block (click)="push5()" menuClose="menu1">
+                Firma
+            </button>
+            <button ion-item id="logout" block (click)="backToRoot()" menuClose="menu1">
+                Çıkış Yap
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

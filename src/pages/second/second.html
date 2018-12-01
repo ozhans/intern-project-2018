@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hastalar
+    </ion-title>
+    <ion-buttons end> <button ion-button item-right (click)="addPerson()">Ekle</button></ion-buttons>
+    
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh..."
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let person of this.persons">
+      <ion-item-options side="right">
+        <button ion-button color="default" (click)="editP(person._id)" small>
+            <ion-icon name="settings" ></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteP(person)" small>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="default" (click)="openRecords(person._id)">
+          <ion-icon name="eye"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item class="item no-padding">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-icon name="apps"></ion-icon> {{person.number}}
+            </ion-col>
+            <ion-col>
+              <ion-icon name="person"></ion-icon> {{person.name}} {{person.surname}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <ion-icon name="call"></ion-icon> {{person.phone}}
+            </ion-col>
+            <ion-col>
+                <ion-icon name="call"></ion-icon> {{person.phone2}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <ion-icon name="calendar"></ion-icon> {{person.birthday | date:"dd/MM/yyy"}}
+            </ion-col>
+            <ion-col>
+                <ion-icon name="locate"></ion-icon> {{person.address}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

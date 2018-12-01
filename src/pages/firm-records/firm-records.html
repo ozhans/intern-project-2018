@@ -1,0 +1,21 @@
+<!--
+  Generated template for the FirmRecordsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-tabs tabs-only selectedIndex ="0">
+        <ion-tab tabTitle="Ürünler" tabIcon="list-box" [root]="productsTab" [rootParams]="this.id" (ionSelect)="changeToProduct()"></ion-tab>
+        <ion-tab tabTitle="Ödemeler" tabIcon="cash" [root]="paymentsTab" [rootParams]="this.id" (ionSelect)="changeToPayment()"></ion-tab>
+      </ion-tabs>
+</ion-content>

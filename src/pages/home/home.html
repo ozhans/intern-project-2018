@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Klinik Bilgi Sistemi
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <!--<ion-item>
+    <img src="../../assets/imgs/klinik-bilgi-sistemi.jpg">
+  </ion-item>
+  <ion-list>
+      <button ion-item class="buttons" (click)="push1()">
+          Hasta
+      </button>
+      <button ion-item class="buttons" (click)="push3()">
+          Doktor
+      </button>
+      <button ion-item class="buttons" (click)="push2()">
+          Randevu
+      </button>
+      <button ion-item class="buttons" (click)="push4()">
+          Ürün
+      </button>
+      <button ion-item class="buttons" (click)="push5()">
+          Firma
+      </button>
+      <button ion-item class="buttons" (click)="userAlert()">
+          Kullanıcı
+      </button>
+  </ion-list>-->
+  <ion-card (click) = "push1()">
+    <img src="../../assets/imgs/patient.jpeg"/>
+    <div class="card-title">Hasta</div>
+  </ion-card>
+
+  <ion-card (click)="push3()">
+    <img src="../../assets/imgs/doctor.jpg"/>
+    <div class="card-title">Doktor</div>
+  </ion-card>
+
+  <ion-card (click)="push2()">
+    <img src="../../assets/imgs/appointment.jpg"/>
+    <div class="card-title">Randevu</div>
+  </ion-card>
+
+  <ion-card (click)="push4()">
+    <img src="../../assets/imgs/product.jpg"/>
+    <div class="card-title">Ürün</div>
+</ion-card>
+<ion-card (click)="push5()">
+  <img src="../../assets/imgs/firm.jpeg"/>
+  <div class="card-title">Firma</div>
+</ion-card>
+</ion-content>

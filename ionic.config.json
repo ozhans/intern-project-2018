@@ -1,0 +1,12 @@
+{
+  "name": "InternshipProject-OzhanSuat",
+  "app_id": "04804f38",
+  "type": "ionic-angular",
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://ionicdeneme.localtunnel.me/api"
+    }
+  ]
+}

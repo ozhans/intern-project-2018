@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AddAppointmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click) = "close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Randevu Ekle</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary">Hasta</ion-label>
+    <ion-select [(ngModel)]="appointment.person">
+      <ion-option *ngFor="let person of this.persons" [value]="person.name + ' ' + person.surname">{{person.name}} {{person.surname}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Doktor</ion-label>
+    <ion-select [(ngModel)]="appointment.doctor">
+      <ion-option *ngFor="let doctor of this.doctors" [value]="doctor.name + ' ' + doctor.surname" >{{doctor.name}} {{doctor.surname}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" >Gün</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" min="2018" max="2020" [(ngModel)]="appointment.date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" >Saat</ion-label>
+    <ion-select [(ngModel)]="appointment.hour">
+      <ion-option *ngFor="let hour of this.hours" [value]="hour">{{hour}}</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="appointment.minute">
+      <ion-option *ngFor="let minute of this.minutes" [value]="minute" >{{minute}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button (click)="save()">Kaydet</button>
+</ion-content>

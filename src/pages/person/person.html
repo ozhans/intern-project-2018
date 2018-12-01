@@ -1,0 +1,59 @@
+<!--
+  Generated template for the PersonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click) = "close()">
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Hasta
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" stacked>İsim</ion-label>
+      <ion-input type="text" [(ngModel)]="person.name" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Soyisim</ion-label>
+      <ion-input type="text" [(ngModel)]="person.surname" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" stacked>Doğum Günü</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="person.birthday"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked >Cinsiyet</ion-label>
+      <ion-select [(ngModel)]="person.gender">
+        <ion-option value="k">Kadın</ion-option>
+        <ion-option value="e">Erkek</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Hasta No</ion-label>
+      <ion-input type="number" [(ngModel)]="person.number" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Telefon</ion-label>
+      <ion-input type="tel" [(ngModel)]="person.phone" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>2. telefon</ion-label>
+      <ion-input type="tel" [(ngModel)]="person.phone2" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" stacked>Adres</ion-label>
+        <ion-input type="text" [(ngModel)]="person.address" ></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="save()">Kaydet</button>
+</ion-content>

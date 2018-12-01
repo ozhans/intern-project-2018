@@ -1,0 +1,64 @@
+<!--
+  Generated template for the DoctorsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Çalışan</ion-title>
+    <ion-buttons end> <button ion-button item-right (click)="addDoctor()">Ekle</button></ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingText="Pull to refresh..."
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+    </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let doctor of this.doctors" >
+      <ion-item-options side="right">
+        <button ion-button color="default" (click)="editD(doctor._id)" small>
+            <ion-icon name="settings" ></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteD(doctor)" small>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item class="item no-padding">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-icon name="person"></ion-icon> {{doctor.name}} {{doctor.surname}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-icon name="calendar"></ion-icon> {{doctor.birthday | date: 'dd/MM/yyyy'}}
+              </ion-col>
+              <ion-col>
+                  <ion-icon name="call"></ion-icon> {{doctor.phone}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-icon name="cash"></ion-icon> {{doctor.salary}}
+              </ion-col>
+              <ion-col>
+                  <ion-icon name="ribbon"></ion-icon> {{doctor.title}}
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-icon name="locate"></ion-icon> {{doctor.address}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

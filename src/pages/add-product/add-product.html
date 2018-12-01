@@ -1,0 +1,39 @@
+<!--
+  Generated template for the AddProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ürün Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click) = "close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" stacked>Ürün Kodu</ion-label>
+    <ion-input type="text" [(ngModel)]="product.product_code" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Ürün Adı</ion-label>
+    <ion-input type="text" [(ngModel)]="product.name" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Stok</ion-label>
+    <ion-input type="number" [(ngModel)]="product.stock" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Açıklama</ion-label>
+    <ion-input type="text" [(ngModel)]="product.comment" ></ion-input>
+  </ion-item>
+    <button ion-button (click)="save()" >Kaydet</button>
+</ion-content>
